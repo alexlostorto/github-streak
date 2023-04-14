@@ -7,9 +7,11 @@ def main():
     import json
 
     response = contactAPI()
+    currentStreak = getCurrentStreak(response)
+    totalContributions = getTotalContributions(response)
 
-    print(getCurrentStreak(response))
-    print(getTotalContributions(response))
+    print(f"Current streak: {currentStreak}")
+    print(f"Total contributions: {totalContributions}")
 
 
 if __name__ == '__main__':

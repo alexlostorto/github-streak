@@ -8,7 +8,6 @@ def getCurrentStreak(response):
     for day in reversed(contributions):
         if day['contributionCount'] >= 1:
             currentStreak += 1
-            print(day['date'], day['contributionCount'])
         else:
             return currentStreak
 
