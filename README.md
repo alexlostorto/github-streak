@@ -2,8 +2,7 @@
 
 [![Maintainability](https://img.shields.io/codeclimate/maintainability/alexlostorto/github-streak?style=for-the-badge&message=Code+Climate&labelColor=222222&logo=Code+Climate&logoColor=FFFFFF)](https://codeclimate.com/github/alexlostorto/github-streak/maintainability)
 
-
-The program automatically retrieves the user's streak statistics using **GitHub's API**.
+The program automatically retrieves the user's streak statistics using **GitHub's GraphQL API**.
 
 ```python
 # Example in console
@@ -24,8 +23,8 @@ git clone https://github.com/alexlostorto/github-streak
 
 ```json
 {
-    "user": "<USERNAME>",
-    "token": "<PERSONAL_ACCESS_TOKEN>"
+  "user": "<USERNAME>",
+  "token": "<PERSONAL_ACCESS_TOKEN>"
 }
 ```
 
