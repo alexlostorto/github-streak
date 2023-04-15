@@ -1,15 +1,13 @@
 # Relative files
 import os
 
-# Reading JSON file
-import json
+# Environment variables
+from dotenv import load_dotenv
 
 
 def getCredentials():
-    directory = os.path.dirname(__file__)
-    with open(os.path.join(directory, "../secrets.json")) as f:
-        jsonData = json.load(f)
-        token = jsonData['token']
-        user = jsonData['user']
+    load_dotenv()
+    token = os.getenv('TOKEN')
+    user = os.getenv('USER')
 
     return token, user

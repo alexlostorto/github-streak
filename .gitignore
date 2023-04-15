@@ -1,5 +1,5 @@
 # Byte-compiled / optimized / DLL files
-src/__pycache__/
+__pycache__/
 *.py[cod]
 
 # C extensions
@@ -50,4 +50,4 @@ coverage.xml
 docs/_build/
 
 # Custom
-secrets.json
+.env
