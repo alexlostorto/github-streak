@@ -1,16 +1,16 @@
-from response import contactAPI
-from streak import getCurrentStreak, getLongestStreak
-from contributions import getTotalContributions
+from src.response import contactAPI
+from src.streak import getCurrentStreak, getLongestStreak
+from src.contributions import getTotalContributions
 
 
 def main():
-    import json
-
     response = contactAPI()
     currentStreak = getCurrentStreak(response)
+    longestStreak = getLongestStreak(response)
     totalContributions = getTotalContributions(response)
 
     print(f"Current streak: {currentStreak}")
+    print(f"Longest streak: {longestStreak}")
     print(f"Total contributions: {totalContributions}")
 
 

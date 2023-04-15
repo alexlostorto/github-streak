@@ -2,7 +2,7 @@
 import requests
 
 # To authenticate request
-from credentials import getCredentials
+from src.credentials import getCredentials
 
 
 def contactAPI():
