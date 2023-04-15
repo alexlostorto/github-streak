@@ -20,7 +20,7 @@ Total contributions: 623
 git clone https://github.com/alexlostorto/github-streak
 ```
 
-2. Create a secrets.json file the following contents
+2. Create a _secrets.json_ file the following contents
 
 ```json
 {
