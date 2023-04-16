@@ -6,9 +6,13 @@ The program automatically retrieves the user's streak statistics using **GitHub'
 
 ```python
 # Example in console
-Current streak: 100
-Longest streak: 100
-Total contributions: 623
++---------------------+----------+
+|       Category      |  Count   |
++---------------------+----------+
+|    Current Streak   | 102 days |
+|    Longest Streak   | 102 days |
+| Total Contributions |   642    |
++---------------------+----------+
 ```
 
 ## ⚡ Quick setup
