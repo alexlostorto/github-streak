@@ -23,16 +23,14 @@ The program automatically retrieves the user's streak statistics using **GitHub'
 git clone https://github.com/alexlostorto/github-streak
 ```
 
-2. Create a _secrets.json_ file the following contents
+2. Rename _.env.example_ to _.env_
 
-```json
-{
-  "user": "<USERNAME>",
-  "token": "<PERSONAL_ACCESS_TOKEN>"
-}
+3. Replace the _username_ with any **GitHub username** and replace _ghp_example_ with your **personal access token**.
+
+```env
+TOKEN=ghp_example
+USER=username
 ```
-
-3. Replace the _username_ with any **GitHub username** and replace the _token_ with your **personal access token**.
 
 4. Run main.py
 
