@@ -1,5 +1,5 @@
 # Pretty tables
-from prettytable import PrettyTable
+from src.lib.prettytables import PrettyTable
 
 
 def createTable(currentStreak, longestStreak, totalContributions):
