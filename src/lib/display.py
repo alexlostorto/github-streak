@@ -1,15 +1,35 @@
+# [topleft, topmiddle, topright, centre, bottomleft, bottommiddle, bottomright, horizontal, vertical]
+separators = {
+    'default': ['+', '+', '+', '+', '+', '+', '+', '+', '+', '─', '│'],
+    'curvy': ['╭', '┬', '╮', '├', '┼', '┤', '╰', '┴', '╯', '─', '│']
+}
+
+topLeft = 0
+topMiddle = 1
+topRight = 2
+middleLeft = 3
+centre = 4
+middleRight = 5
+bottomLeft = 6
+bottomMiddle = 7
+bottomRight = 8
+horizontal = 9
+vertical = 10
+
+
 def displayTable(self):
     maxLengths = getMaxLengths(self)
+    separator = separators.get(self.separator, separators['curvy'])
 
     table = []
-    table.append(createDivider(maxLengths))
-    table.append(createRow(maxLengths, self.header))
-    table.append(createDivider(maxLengths))
+    table.append(createDivider(maxLengths, separator[topLeft], separator[topMiddle], separator[topRight], separator[horizontal]))
+    table.append(createRow(maxLengths, self.header, separator[vertical]))
+    table.append(createDivider(maxLengths, separator[middleLeft], separator[centre], separator[middleRight], separator[horizontal]))
 
     for row in self.contents:
-        table.append(createRow(maxLengths, row))
+        table.append(createRow(maxLengths, row, separator[vertical]))
 
-    table.append(createDivider(maxLengths))
+    table.append(createDivider(maxLengths, separator[bottomLeft], separator[bottomMiddle], separator[bottomRight], separator[horizontal]))
 
     table = '\n'.join(table)
 
@@ -27,29 +47,25 @@ def getMaxLengths(self):
     return maxLengths
 
 
-def createDivider(boxLengths):
-    line = ''
+def createDivider(boxLengths, startCharacter, middleCharacter, endCharacter, horizontal):
+    line = f"{startCharacter}"
+    temp = []
 
     for length in boxLengths:
-        line += '+' + '-' * length
+        temp.append(horizontal * length)
 
-    return line + '+'
+    line += middleCharacter.join(temp)
+
+    return line + endCharacter
 
 
-def createRow(boxLengths, row):
-    def padString(text, length):
-        while len(text) < length:
-            text += ' '
-
-            if len(text) == length:
-                return text
-            else:
-                text = ' ' + text
-        return text
-
+def createRow(boxLengths, row, vertical):
     line = ''
 
     for i in range(len(boxLengths)):
-        line += '|' + padString(row[i], boxLengths[i])
+        spaces = boxLengths[i] - len(row[i])
+        back = (spaces + 1) // 2
+        front = back - spaces % 2
+        line += vertical + back * ' ' + row[i] + front * ' '
 
-    return line + '|'
+    return line + vertical
