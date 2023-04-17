@@ -32,13 +32,19 @@ TOKEN=ghp_example
 USER=username
 ```
 
-4. Run main.py
+4. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+5. Run main.py
 
 ```bash
 python main.py
 ```
 
-5. Star the repo 😄
+6. Star the repo 😄
 
 ## Credits
 
