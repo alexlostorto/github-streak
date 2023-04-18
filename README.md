@@ -5,14 +5,14 @@
 The program automatically retrieves the user's streak statistics using **GitHub's GraphQL API**.
 
 ```python
-# Example in console
-+---------------------+----------+
-|       Category      |  Count   |
-+---------------------+----------+
-|    Current Streak   | 102 days |
-|    Longest Streak   | 102 days |
-| Total Contributions |   642    |
-+---------------------+----------+
+# Examples in console
++---------------------+----------+      ╭─────────────────────┬──────────╮
+|       Category      |  Count   |      │       Category      │   Count  │
++---------------------+----------+      ├─────────────────────┼──────────┤
+|    Current Streak   | 102 days |      │    Current Streak   │ 104 days │
+|    Longest Streak   | 102 days |      │    Longest Streak   │ 104 days │
+| Total Contributions |   642    |      │ Total Contributions │    658   │
++---------------------+----------+      ╰─────────────────────┴──────────╯
 ```
 
 ## ⚡ Quick setup
