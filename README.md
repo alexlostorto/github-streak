@@ -51,7 +51,7 @@ python main.py
 
 6. Star the repo 😄
 
-## Credits
+## 📜 Credits
 
 Everything is coded by Alex lo Storto
 
