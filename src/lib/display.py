@@ -31,18 +31,16 @@ def displayTable(self):
 
     table.append(createDivider(maxLengths, separator[bottomLeft], separator[bottomMiddle], separator[bottomRight], separator[horizontal]))
 
-    table = '\n'.join(table)
-
     return table
 
 
 def getMaxLengths(self):
-    maxLengths = [len(x) + self.padding for x in self.header]
+    maxLengths = [len(x) + self.padding * 2 for x in self.header]
 
     for row in self.contents:
         for i in range(len(row)):
-            if len(row[i]) + self.padding * 2 > maxLengths[i]:
-                maxLengths[i] = len(row[i]) + self.padding * 2
+            if len(str(row[i])) + self.padding * 2 > maxLengths[i]:
+                maxLengths[i] = len(str(row[i])) + self.padding * 2
 
     return maxLengths
 
@@ -63,9 +61,9 @@ def createRow(boxLengths, row, vertical):
     line = ''
 
     for i in range(len(boxLengths)):
-        spaces = boxLengths[i] - len(row[i])
+        spaces = boxLengths[i] - len(str(row[i]))
         back = (spaces + 1) // 2
         front = back - spaces % 2
-        line += vertical + back * ' ' + row[i] + front * ' '
+        line += vertical + back * ' ' + str(row[i]) + front * ' '
 
     return line + vertical
