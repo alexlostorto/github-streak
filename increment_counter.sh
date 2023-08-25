@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Sync repo
-git pull
-
 # Define the file name and path
 counter_file="counter.txt"
 
